@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:portfolio_web/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'area_info_text.dart';
 import 'coding.dart';
@@ -9,6 +10,12 @@ import 'my_info.dart';
 import 'skills.dart';
 
 class SideMenu extends StatelessWidget {
+  final String _linkedIn =
+      'https://www.linkedin.com/in/oladapodanielolatubosun';
+  final String _github = 'https://github.com/Dapo-dan';
+  final String _twitter =
+      'https://twitter.com/dapo_lora?t=23XEuD2RwObq6T03SMHkVw&s=09';
+
   const SideMenu({
     Key? key,
   }) : super(key: key);
@@ -27,15 +34,15 @@ class SideMenu extends StatelessWidget {
                   children: [
                     const AreaInfoText(
                       title: "Residence",
-                      text: "Bangladesg",
+                      text: "Ife",
                     ),
                     const AreaInfoText(
                       title: "City",
-                      text: "Dhaka",
+                      text: "Osun State",
                     ),
                     const AreaInfoText(
                       title: "Age",
-                      text: "22",
+                      text: "23",
                     ),
                     const Skills(),
                     const SizedBox(height: defaultPadding),
@@ -70,15 +77,27 @@ class SideMenu extends StatelessWidget {
                         children: [
                           const Spacer(),
                           IconButton(
-                            onPressed: () {},
+                            hoverColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            onPressed: _launchLinkedIN,
                             icon: SvgPicture.asset("assets/icons/linkedin.svg"),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            hoverColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            onPressed: _launchGithub,
                             icon: SvgPicture.asset("assets/icons/github.svg"),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            hoverColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            onPressed: _launchTwitter,
                             icon: SvgPicture.asset("assets/icons/twitter.svg"),
                           ),
                           const Spacer(),
@@ -93,5 +112,17 @@ class SideMenu extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _launchLinkedIN() async {
+    if (!await launch(_linkedIn)) throw 'Could not launch $_linkedIn';
+  }
+
+  void _launchGithub() async {
+    if (!await launch(_github)) throw 'Could not launch $_github';
+  }
+
+  void _launchTwitter() async {
+    if (!await launch(_twitter)) throw 'Could not launch $_twitter';
   }
 }
