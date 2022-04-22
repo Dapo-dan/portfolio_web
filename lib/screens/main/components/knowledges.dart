@@ -24,6 +24,8 @@ class Knowledges extends StatelessWidget {
         ),
         const KnowledgeText(text: "Flutter, Dart"),
         const KnowledgeText(text: "GIT Knowledge"),
+        const KnowledgeText(text: "GetX state management"),
+        const KnowledgeText(text: "RESTful APIs"),
       ],
     );
   }

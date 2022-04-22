@@ -22,13 +22,21 @@ class Coding extends StatelessWidget {
           ),
         ),
         const AnimatedLinearProgressIndicator(
-          percentage: 0.65,
+          percentage: 0.8,
           label: "Dart",
         ),
         const AnimatedLinearProgressIndicator(
-          percentage: 0.4,
+          percentage: 0.6,
           label: "Java/ Kotlin",
-        ),        
+        ),
+        const AnimatedLinearProgressIndicator(
+          percentage: 0.7,
+          label: "HTML",
+        ),
+        const AnimatedLinearProgressIndicator(
+          percentage: 0.5,
+          label: "CSS",
+        ),
       ],
     );
   }

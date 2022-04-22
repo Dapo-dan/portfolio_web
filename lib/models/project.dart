@@ -1,40 +1,46 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
 class Project {
-  final String? title, description;
+  final String? title, description, url;
 
-  Project({this.title, this.description});
+  Project({this.title, this.description,  this.url});
 }
 
 List<Project> demo_projects = [
   Project(
-    title: "Responsive Admin Panel or Dashboard - Flutter UI",
+    title: "To-Do Monitor",
     description:
-        "On Flutter V2.* web officially supported on a stable branch. Today I share an Admin panel or you can call it dashboard UI build with flutter. Now you can build your app dashboard using flutter. This dashboard contains almost everything that you need like a chart, table, nice small card for showing info.",
+        "This can be used to keep track of plans, mark them as completed and also delete them when done. State management used is GetX.",
+    url: ''
   ),
   Project(
-    title: "E-Commerce Complate App - Flutter UI",
+    title: "Lekki Phase 1 properties",
     description:
-        "In the first part of our complete e-commerce app, we show you how you can create a nice clean onboarding screen for your e-commerce app that can run both Andriod and iOS devices because it builds with flutter. Then on the second episode, we build a Sign in, Forgot Password screen with a custom error indicator.",
+        "A properties application that shows the list of available properties for rentage in an environment with all the necessary details available including property owner. Details of properties can also be updated as the situation permits.",
+        url: ''
   ),
   Project(
-    title: "Outlook Email App Redesign - Flutter Fully Responsive Design UI",
+    title: "Insight Timer Redesign - Flutter UI",
     description:
-        "We redesign the outlook app also make it responsive so that you can run it everywhere on your phone, tab, or web. In this flutter responsive video, we will show you the real power of flutter. Make mobile, web, and desktop app from a single codebase.",
+        "Insight timer is a meditation application that enables the user choose their gurus based on their likes and speeches, books and routines are tailored to those likes",
+        url: ''
   ),
   Project(
-    title: "Chat/Messaging App Light and Dark Theme - Flutter UI",
+    title: "Side Chef - Flutter UI",
     description:
-        "Today we gonna build messing/chat app #ui using #flutter that runs both Android and iOS devices also has a dark and light theme. We create in total 4 screens all of that support both Dark Theme and Light Theme. At first, we design a welcome screen that contains an image with a tag line also has a skip button.",
+        "Side chef is a food ordering platform for buying specific meals and ingredients based on preference",
+    url: ''
   ),
   Project(
-    title: "Welcome page, Login Page and Sign up page - Flutter UI",
+    title: "Diabetes Application",
     description:
-        "In the first part of our complete e-commerce app, we show you how you can create a nice clean onboarding screen for your e-commerce app that can run both Andriod and iOS devices because it builds with flutter. Then on the second episode, we build a Sign in, Forgot Password screen with a custom error indicator.",
+        "This application is created for the purpose of checking out the number of diabetic patients in Nigerian states.",
+    url: ''
   ),
   Project(
-    title: "Covid-19 App - Flutter UI",
+    title: "Air Salon - Flutter UI",
     description:
-        "We redesign the outlook app also make it responsive so that you can run it everywhere on your phone, tab, or web. In this flutter responsive video, we will show you the real power of flutter. Make mobile, web, and desktop app from a single codebase.",
+        "Used to make appointments with a barber in the area one is...",
+    url: ''
   ),
 ];

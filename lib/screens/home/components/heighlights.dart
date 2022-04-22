@@ -17,78 +17,78 @@ class HighLightsInfo extends StatelessWidget {
       child: Responsive.isMobileLarge(context)
           ? Column(
               children: [
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: const [
+                //     HeighLight(
+                //       counter: AnimatedCounter(
+                //         value: 119,
+                //         text: "K+",
+                //       ),
+                //       label: "Subscribers",
+                //     ),
+                //     HeighLight(
+                //       counter: AnimatedCounter(
+                //         value: 40,
+                //         text: "+",
+                //       ),
+                //       label: "Videos",
+                //     ),
+                //   ],
+                // ),
+                // const SizedBox(height: defaultPadding),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     HeighLight(
                       counter: AnimatedCounter(
-                        value: 119,
-                        text: "K+",
-                      ),
-                      label: "Subscribers",
-                    ),
-                    HeighLight(
-                      counter: AnimatedCounter(
-                        value: 40,
-                        text: "+",
-                      ),
-                      label: "Videos",
-                    ),
-                  ],
-                ),
-                const SizedBox(height: defaultPadding),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    HeighLight(
-                      counter: AnimatedCounter(
-                        value: 30,
+                        value: 10,
                         text: "+",
                       ),
                       label: "GitHub Projects",
                     ),
-                    HeighLight(
-                      counter: AnimatedCounter(
-                        value: 13,
-                        text: "K+",
-                      ),
-                      label: "Stars",
-                    ),
+                    // HeighLight(
+                    //   counter: AnimatedCounter(
+                    //     value: 13,
+                    //     text: "K+",
+                    //   ),
+                    //   label: "Stars",
+                    // ),
                   ],
                 ),
               ],
             )
           : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: const [
+                // HeighLight(
+                //   counter: AnimatedCounter(
+                //     value: 119,
+                //     text: "K+",
+                //   ),
+                //   label: "Subscribers",
+                // ),
+                // HeighLight(
+                //   counter: AnimatedCounter(
+                //     value: 40,
+                //     text: "+",
+                //   ),
+                //   label: "Videos",
+                // ),
                 HeighLight(
                   counter: AnimatedCounter(
-                    value: 119,
-                    text: "K+",
-                  ),
-                  label: "Subscribers",
-                ),
-                HeighLight(
-                  counter: AnimatedCounter(
-                    value: 40,
-                    text: "+",
-                  ),
-                  label: "Videos",
-                ),
-                HeighLight(
-                  counter: AnimatedCounter(
-                    value: 30,
+                    value: 10,
                     text: "+",
                   ),
                   label: "GitHub Projects",
                 ),
-                HeighLight(
-                  counter: AnimatedCounter(
-                    value: 13,
-                    text: "K+",
-                  ),
-                  label: "Stars",
-                ),
+                // HeighLight(
+                //   counter: AnimatedCounter(
+                //     value: 13,
+                //     text: "K+",
+                //   ),
+                //   label: "Stars",
+                // ),
               ],
             ),
     );
