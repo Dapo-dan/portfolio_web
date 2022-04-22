@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/responsive.dart';
+import 'package:portfolio_web/screens/home/mail.dart';
 
 import '../../../constants.dart';
 
@@ -45,7 +46,12 @@ class HomeBanner extends StatelessWidget {
                 const SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const EmailSender()));
+                    },
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                           horizontal: defaultPadding * 2,
@@ -53,7 +59,7 @@ class HomeBanner extends StatelessWidget {
                       backgroundColor: primaryColor,
                     ),
                     child: const Text(
-                      "EXPLORE NOW",
+                      "CONTACT ME",
                       style: TextStyle(color: darkColor),
                     ),
                   ),
