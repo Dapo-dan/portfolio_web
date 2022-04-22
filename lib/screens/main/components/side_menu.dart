@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:portfolio_web/constants.dart';
+import 'package:portfolio_web/screens/home/mail.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'area_info_text.dart';
@@ -15,6 +16,8 @@ class SideMenu extends StatelessWidget {
   final String _github = 'https://github.com/Dapo-dan';
   final String _twitter =
       'https://twitter.com/dapo_lora?t=23XEuD2RwObq6T03SMHkVw&s=09';
+  final String _cv =
+      'https://drive.google.com/uc?export=download&id=1CV6o8aYi6idJmT2NxcbxU2O4o2HxGpDg';
 
   const SideMenu({
     Key? key,
@@ -40,10 +43,6 @@ class SideMenu extends StatelessWidget {
                       title: "City",
                       text: "Osun State",
                     ),
-                    const AreaInfoText(
-                      title: "Age",
-                      text: "23",
-                    ),
                     const Skills(),
                     const SizedBox(height: defaultPadding),
                     const Coding(),
@@ -51,7 +50,7 @@ class SideMenu extends StatelessWidget {
                     const Divider(),
                     const SizedBox(height: defaultPadding / 2),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: _launchCV,
                       child: FittedBox(
                         child: Row(
                           children: [
@@ -100,6 +99,21 @@ class SideMenu extends StatelessWidget {
                             onPressed: _launchTwitter,
                             icon: SvgPicture.asset("assets/icons/twitter.svg"),
                           ),
+                          IconButton(
+                            color: const Color(0xFF8c8c8e),
+                            hoverColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const EmailSender()));
+                            },
+                            icon: const Icon(Icons.mail),
+                          ),
                           const Spacer(),
                         ],
                       ),
@@ -116,6 +130,10 @@ class SideMenu extends StatelessWidget {
 
   void _launchLinkedIN() async {
     if (!await launch(_linkedIn)) throw 'Could not launch $_linkedIn';
+  }
+
+  void _launchCV() async {
+    if (!await launch(_cv)) throw 'Could not launch $_cv';
   }
 
   void _launchGithub() async {
