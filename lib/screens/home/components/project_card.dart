@@ -17,12 +17,11 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () async {
-        String _url = project.url!;
-        if (!await launch(_url)) throw 'Could not launch $_url';
+        String url = project.url!;
+        if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
       },
       style: TextButton.styleFrom(
-        onSurface: secondaryColor,
-        backgroundColor: secondaryColor,
+        backgroundColor: secondaryColor, disabledForegroundColor: secondaryColor.withOpacity(0.38),
         padding: const EdgeInsets.all(defaultPadding),
       ),
       child: Column(
@@ -32,7 +31,7 @@ class ProjectCard extends StatelessWidget {
             project.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
           const SizedBox(
             height: defaultPadding / 3,

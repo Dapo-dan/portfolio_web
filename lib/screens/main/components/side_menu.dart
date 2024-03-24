@@ -14,8 +14,7 @@ class SideMenu extends StatelessWidget {
   final String _linkedIn =
       'https://www.linkedin.com/in/oladapodanielolatubosun';
   final String _github = 'https://github.com/Dapo-dan';
-  final String _twitter =
-      'https://twitter.com/dapo_lora?t=23XEuD2RwObq6T03SMHkVw&s=09';
+  final String _twitter = 'https://x.com/dapo_dev?s=21';
   final String _cv =
       'https://drive.google.com/uc?export=download&id=1CV6o8aYi6idJmT2NxcbxU2O4o2HxGpDg';
 
@@ -59,7 +58,7 @@ class SideMenu extends StatelessWidget {
                               style: TextStyle(
                                 color: Theme.of(context)
                                     .textTheme
-                                    .bodyText1!
+                                    .bodyLarge!
                                     .color,
                               ),
                             ),
@@ -129,18 +128,20 @@ class SideMenu extends StatelessWidget {
   }
 
   void _launchLinkedIN() async {
-    if (!await launch(_linkedIn)) throw 'Could not launch $_linkedIn';
+    if (!await launchUrl(Uri.parse(_linkedIn)))
+      throw 'Could not launch $_linkedIn';
   }
 
   void _launchCV() async {
-    if (!await launch(_cv)) throw 'Could not launch $_cv';
+    if (!await launchUrl(Uri.parse(_cv))) throw 'Could not launch $_cv';
   }
 
   void _launchGithub() async {
-    if (!await launch(_github)) throw 'Could not launch $_github';
+    if (!await launchUrl(Uri.parse(_github))) throw 'Could not launch $_github';
   }
 
   void _launchTwitter() async {
-    if (!await launch(_twitter)) throw 'Could not launch $_twitter';
+    if (!await launchUrl(Uri.parse(_twitter)))
+      throw 'Could not launch $_twitter';
   }
 }

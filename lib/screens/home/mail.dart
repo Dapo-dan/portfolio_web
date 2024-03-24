@@ -9,7 +9,7 @@ class EmailSender extends StatefulWidget {
   const EmailSender({Key? key}) : super(key: key);
 
   @override
-  _EmailSenderState createState() => _EmailSenderState();
+  State<EmailSender> createState() => _EmailSenderState();
 }
 
 class _EmailSenderState extends State<EmailSender> {
@@ -29,7 +29,7 @@ class _EmailSenderState extends State<EmailSender> {
     // Convert the Mailto instance into a string.
     // Use either Dart's string interpolation
     // or the toString() method.
-    await launch('$mailtoLink');
+    await launchUrl(Uri.parse('$mailtoLink'));
   }
 
   @override
@@ -74,17 +74,17 @@ class _EmailSenderState extends State<EmailSender> {
                 onPressed: () async {
                   await launchMailto();
                 },
+                style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: defaultPadding * 2,
+                        vertical: defaultPadding),
+                    backgroundColor: primaryColor),
                 child: const Center(
                   child: Text(
                     "Send",
                     style: TextStyle(color: darkColor),
                   ),
                 ),
-                style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: defaultPadding * 2,
-                        vertical: defaultPadding),
-                    backgroundColor: primaryColor),
               ),
             )
           ],

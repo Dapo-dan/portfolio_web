@@ -21,7 +21,7 @@ class MyInfo extends StatelessWidget {
             const Spacer(),
             Text(
               "Oladapo (Daniel) Olatubosun",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const Text(
               "Flutter Developer",
