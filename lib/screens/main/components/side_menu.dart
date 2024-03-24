@@ -36,11 +36,11 @@ class SideMenu extends StatelessWidget {
                   children: [
                     const AreaInfoText(
                       title: "Residence",
-                      text: "Ife",
+                      text: "Lagos State",
                     ),
                     const AreaInfoText(
-                      title: "City",
-                      text: "Osun State",
+                      title: "Country",
+                      text: "Nigeria",
                     ),
                     const Skills(),
                     const SizedBox(height: defaultPadding),
@@ -128,8 +128,9 @@ class SideMenu extends StatelessWidget {
   }
 
   void _launchLinkedIN() async {
-    if (!await launchUrl(Uri.parse(_linkedIn)))
+    if (!await launchUrl(Uri.parse(_linkedIn))) {
       throw 'Could not launch $_linkedIn';
+    }
   }
 
   void _launchCV() async {
@@ -141,7 +142,8 @@ class SideMenu extends StatelessWidget {
   }
 
   void _launchTwitter() async {
-    if (!await launchUrl(Uri.parse(_twitter)))
+    if (!await launchUrl(Uri.parse(_twitter))) {
       throw 'Could not launch $_twitter';
+    }
   }
 }

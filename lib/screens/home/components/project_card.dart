@@ -15,35 +15,41 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () async {
+    return GestureDetector(
+      onTap: () async {
         String url = project.url!;
         if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
       },
-      style: TextButton.styleFrom(
-        backgroundColor: secondaryColor, disabledForegroundColor: secondaryColor.withOpacity(0.38),
-        padding: const EdgeInsets.all(defaultPadding),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            project.title!,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.titleSmall,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            12,
           ),
-          const SizedBox(
-            height: defaultPadding / 3,
-          ),
-          Text(
-            project.description!,
-            maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
+          color: secondaryColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              project.title!,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(
+              height: defaultPadding / 3,
+            ),
+            Text(
+              project.description!,
+              maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
+        ),
       ),
     );
+
   }
 }
